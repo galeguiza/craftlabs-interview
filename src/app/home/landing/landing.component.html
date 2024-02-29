@@ -1,0 +1,21 @@
+@if (products.length) {
+  <table>
+      <thead>
+        <tr>
+          @for(header of productsHeaders; track header) {
+            <th>{{ header }}</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for(product of products; track product.id) {
+          <tr>
+            
+            @for(header of productsHeaders; track header) {
+              <td>{{ header | prodVal : product }}</td>
+            }
+          </tr>
+        }
+      </tbody>
+  </table>
+}
